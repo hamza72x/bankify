@@ -26,3 +26,4 @@ build
 
 .vscode
 
+app.env

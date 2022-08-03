@@ -3,7 +3,6 @@ version: "3.9"
 services:
     # database service
     service_db:
-        platform: linux/x86_64
         image: postgres
         container_name: ct_postgres
         restart: unless-stopped

@@ -7,10 +7,9 @@ RUN go mod download && go mod verify
 
 COPY *.go ./
 
+COPY api ./api
 COPY config ./config
 COPY db ./db
-COPY doc ./doc
-COPY server ./server
 COPY util ./util
 
 RUN go build -o /app/runner
