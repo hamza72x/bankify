@@ -1,9 +1,9 @@
 ## Running
 
 -   Run Docker
--   Copy `sample.env` to `app.env` and make necessary changes
+-   Copy `app.sample.env` to `app.env` and make necessary changes
 -   `$ make up`
--   For testing: `make test`
+-   Server should be running on port 3001
 
 ## Endpoints
 
@@ -19,22 +19,26 @@ curl -L -d '{"name": "Hamza"}' localhost:3001/accounts
 curl -L localhost:3001/accounts
 ```
 
-- Deposit money
+-   Deposit money
 
 ```sh
 curl -L -d '{"amount": 100}' localhost:3001/accounts/1/deposit
 ```
 
-- Withdraw money
+-   Withdraw money
 
 ```sh
 curl -L -d '{"amount": 100}' localhost:3001/accounts/1/withdraw
 ```
 
-- Transfer money
+-   Transfer money
 
 ```sh
 curl -L -d '{"amount": 100, "from_account_id": 1, "to_account_id": 2}' localhost:3001/transfer
 ```
 
 ## Testing
+
+-   Run a postgres server (`make db_dev`)
+-   `go test -v ./...`
+-   Check `app.env` - `HOST` (should be: 127.0.0.1)

@@ -13,7 +13,7 @@ up:
 # `air` => live reloading for golang
 db_dev:
 	docker run -v "$(PWD)/tmp/vol_postgresql:/var/lib/postgresql/data" \
-	--name ct_postgres --rm -p 5432:5432 \
+	--rm -p 5432:5432 \
 	-e POSTGRES_USER="$(DB_USERNAME)" -e POSTGRES_DB="$(DB_NAME)" \
 	-e POSTGRES_PASSWORD="$(DB_PASSWORD)" \
 	postgres:latest

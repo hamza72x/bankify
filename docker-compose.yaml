@@ -36,20 +36,6 @@ services:
         networks:
             - db_network
 
-    # testing service
-    service_test:
-        profiles: ["cli-only"]
-        depends_on:
-            service_db:
-                condition: service_healthy
-        build:
-            context: .
-            dockerfile: Dockerfile
-        container_name: ct_test
-        env_file: app.env
-        networks:
-            - db_network
-
 networks:
     db_network:
         driver: bridge
